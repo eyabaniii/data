@@ -13,11 +13,28 @@ BEGIN
                     END_IF
                         END_FOR
                         IF (exist==false) THEN
-                        sum:=sum+set1[1]
+                        sum:=sum+set1[i]
 
                         END_IF
      exist:=false;
     
         END_FOR
+
+     FOR j FROM 0 TO (set2.length)-1  DO
+                    FOR i FROM 0 TO (set1.length)-1  DO
+                    IF (set2[j]==set1[i]) THEN
+                        exist:=true;
+                    END_IF
+                        END_FOR
+                        IF (exist==false) THEN
+                        sum:=sum+set2[j]
+
+                        END_IF
+     exist:=false;
+    
+        END_FOR
+
+
+
 WRITE(sum)
 END
